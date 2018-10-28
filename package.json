@@ -1,0 +1,37 @@
+{
+  "name": "recost-persist",
+  "version": "0.0.1",
+  "description": "persist application state into localstorage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JWebCoder/recost-persist.git"
+  },
+  "keywords": [
+    "recost",
+    "persist",
+    "localstorage",
+    "react",
+    "javascript"
+  ],
+  "author": "João Moura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JWebCoder/recost-persist/issues"
+  },
+  "homepage": "https://github.com/JWebCoder/recost-persist#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-react": "^7.0.0",
+    "eslint": "^5.8.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
