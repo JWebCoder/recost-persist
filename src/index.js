@@ -1,6 +1,6 @@
 function persister (target = 'recost-persister') {
   return {
-    after: (state) => {
+    after: (state = {}) => {
       window.localStorage.setItem(target, JSON.stringify(state))
     },
   }
