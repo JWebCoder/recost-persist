@@ -3,7 +3,8 @@
         "mocha": true
     },
     "globals": {
-        "chai": true
+        "chai": true,
+        "expect": true
     },
     "extends": "standard",
     "rules": {

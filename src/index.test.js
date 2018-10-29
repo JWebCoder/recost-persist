@@ -4,7 +4,7 @@ describe('reloadPersistedState', function () {
   it('called without any param should return and empty object', function () {
     window.localStorage.clear()
     const result = reloadPersistedState()
-    chai.expect(Object.keys(result).length).to.equal(0)
+    expect(Object.keys(result).length).toEqual(0)
   })
 
   it('if no data is set on localstorage, it should return the default initial state', function () {
@@ -30,7 +30,7 @@ describe('reloadPersistedState', function () {
     const data = JSON.stringify({ b: 2, c: 3 })
     window.localStorage.setItem(id, data)
     const result = reloadPersistedState(id)
-    chai.expect(JSON.stringify(result)).to.equal(data)
+    expect(JSON.stringify(result)).toEqual(data)
   })
 
   it('if there is data set on localstorage, it should return the merged localstorage data with the default initial state', function () {
@@ -50,7 +50,7 @@ describe('reloadPersistedState', function () {
       throw new Error('Does not contain the same keys')
     }
 
-    chai.expect(result.b).to.equal(2)
+    expect(result.b).toEqual(2)
   })
 })
 
@@ -58,14 +58,14 @@ describe('persister', function () {
   it('should return an object with a property after with the function type', function () {
     window.localStorage.clear()
     const result = persister()
-    chai.assert.typeOf(result.after, 'function')
+    expect(typeof result.after).toEqual('function')
   })
 
   it('after function should return undefined', function () {
     window.localStorage.clear()
     const result = persister()
-    chai.assert.typeOf(result.after(), 'undefined')
-    chai.assert.typeOf(result.after({ a: 1, b: 1 }), 'undefined')
+    expect(result.after()).toEqual(undefined)
+    expect(result.after({ a: 1, b: 1 })).toEqual(undefined)
   })
 
   it('after function should save the passed state on localstorage', function () {
@@ -73,13 +73,13 @@ describe('persister', function () {
     const result = persister('local')
     const data = { a: 1, b: 1 }
     result.after(data)
-    chai.expect(JSON.stringify(data)).to.equal(window.localStorage.getItem('local'))
+    expect(JSON.stringify(data)).toEqual(window.localStorage.getItem('local'))
   })
 
   it('after function should save an empty object if no state is passed', function () {
     window.localStorage.clear()
     const result = persister('local')
     result.after()
-    chai.expect('{}').to.equal(window.localStorage.getItem('local'))
+    expect('{}').toEqual(window.localStorage.getItem('local'))
   })
 })
