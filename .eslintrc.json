@@ -1,9 +1,8 @@
 {
     "env": {
-        "mocha": true
+        "jest": true
     },
     "globals": {
-        "chai": true,
         "expect": true
     },
     "extends": "standard",
