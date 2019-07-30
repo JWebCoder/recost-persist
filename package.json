@@ -1,6 +1,6 @@
 {
   "name": "recost-persist",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "persist application state into localstorage",
   "main": "lib/index.js",
   "scripts": {
